@@ -1,13 +1,10 @@
 <?php
-function myportfolio_enqueue_styles() {
-    wp_enqueue_style( 'myportfolio-style', get_stylesheet_uri("/css/index-style.css") );
-}
-add_action( 'wp_enqueue_scripts', 'myportfolio_enqueue_styles' );
-function myportfolio_enqueue_scripts() {
+function myportfolio_files(){
+    wp_enqueue_style('myportfolio_main_styles', get_theme_file_uri("/css/index-style.css"));
     wp_enqueue_script( 'myportfolio-main-js', get_template_directory_uri() . '/javascript/main.js', array(), '1.0', true );
+    wp_enqueue_style( 'myportfolio-style', get_stylesheet_uri() );
 }
-add_action( 'wp_enqueue_scripts', 'myportfolio_enqueue_scripts' );
-
+add_action('wp_enqueue_scripts', 'myportfolio_files');
 
 // @TODO Add a custom post type for portfolio items
 function myportfolio_widgets_init() {
@@ -22,4 +19,22 @@ function myportfolio_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'myportfolio_widgets_init' );
+
+//@TODO move to mu-plugins
+function create_work_experience_post_type() {
+    register_post_type('work_experience',
+        array(
+            'labels' => array(
+                'name' => __('Work Experience'),
+                'singular_name' => __('Work Experience'),
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'menu_icon' => 'dashicons-businessman',
+        )
+    );
+}
+add_action('init', 'create_work_experience_post_type');
+
 ?>
+
