@@ -10,13 +10,48 @@
     --info-color: #17a2b8;
 }
 
-h1{
-    font-size: 2em;
-    margin: 0.67em 0;
-    color: #0a4b78;
+body{
+    margin: 0;
 }
+
+.hero-section{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2em;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-section__headline,
+.hero-section__subheadline {
+    margin: 0;
+}
+.hero-section__headline {
+    font-size: 2.5em;
+}
+
+.hero-section__subheadline {
+    font-size: 1.5em;
+}
+
+.hero-section__description {
+    margin: 1em 0;
+}
+
+.hero-section__cta {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .work-experience {
-    background-color: var(--background-color);
+    background-color: var(--bg-color);
     color: var(--text-color);
     padding: 2em;
 }
