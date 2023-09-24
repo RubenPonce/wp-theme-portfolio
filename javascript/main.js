@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeBtn = document.getElementById("workExperienceClose");
 
     function showSidebar() {
-        if(!sidebar.classList.contains("work-experience__sidebar--show")) {
-            sidebar.classList.add("work-experience__sidebar--show");
+        if(!sidebar.classList.contains("we__sidebar--show")) {
+            sidebar.classList.add("we__sidebar--show");
         }
     }
 
     function hideSidebar() {
-        sidebar.classList.remove("work-experience__sidebar--show");
+        sidebar.classList.remove("we__sidebar--show");
     }
 
     toggleBtn.addEventListener("click", showSidebar);
