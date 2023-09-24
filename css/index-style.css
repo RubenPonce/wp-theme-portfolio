@@ -32,6 +32,7 @@ body {
         align-items: center;
         background: var(--bg-color);
         height: 61px;
+
         & .logo {
             margin: 0;
             padding: 0;
@@ -48,8 +49,27 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            & .vertical-line {
+                height: 30px;
+                width: 1px;
+                background-color: var(--primary-color);
+            }
+
+            & .social {
+                color: var(--text-color);
+                text-decoration: none;
+                font-size: 1.2em;
+                transition: color 0.3s ease-in-out;
+            }
+
+            & .social:hover {
+                color: var(--primary-color);
+            }
+
             & li {
                 margin: 0 1em;
+
                 & a {
                     color: var(--text-color);
                     text-decoration: none;
@@ -58,9 +78,10 @@ body {
 
                 }
             }
+
             & .current-menu-item {
-                & a{
-                    color: var(--primary-color) ;
+                & a {
+                    color: var(--primary-color);
                 }
             }
         }
@@ -121,6 +142,7 @@ body {
     transition: left 0.3s ease-in-out;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
+
 .we__sidebar--show {
     left: 0;
 }
@@ -131,11 +153,13 @@ body {
     cursor: pointer;
     display: inline-block;
 }
+
 .work-experience {
     background-color: var(--bg-color);
     color: var(--text-color);
     padding: 10em 2em 2em 2em;
-  &   .we__close {
+
+    & .we__close {
         margin-top: 5em;
         padding: 0.5em;
         border: 1px solid var(--primary-color);
@@ -146,12 +170,14 @@ body {
         right: 15px;
         font-size: 24px;
         cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
     }
+
     & .we__close:hover {
         background-color: var(--primary-color);
         color: white;
     }
+
     & .work-experience__company-name {
         color: var(--secondary-color);
         font-size: 1.5em;
